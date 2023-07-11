@@ -38,17 +38,19 @@ const logEvents = async (currentDateStamp) => {
           textFileInFolder.push(file);
         }
       });
-      console.log(textFileInFolder);
     });
   } catch (error) {
     console.error(error);
   }
 };
-//calling function
+
+//calling function for creating folder & file with time stamp
 logEvents(currentDateStamp);
 
+//creating endpoint
 app.get("/", function (req, res) {
   res.send(textFileInFolder);
 });
 
-app.listen(3001);
+//creating local server for listening on port 3000
+app.listen(3000);
